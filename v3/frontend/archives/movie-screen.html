@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h3 {
+            text-align: center;
+            color: #333;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        p {
+            margin: 15px 0;
+        }
+    </style>
+    <script src="../js/fetch-movie.js" defer></script> <!-- Include the fetch-movie.js file -->
+</head>
+<body>
+
+<div class="container">
+    <h1 id="movie-title">Movie Title</h1>
+    <img id="movie-cover" src="" alt="Movie Cover Image">
+    <div id="movie-details-container">
+        <!-- Movie details will be injected here -->
+    </div>
+</div>
+
+</body>
+</html>
+
+

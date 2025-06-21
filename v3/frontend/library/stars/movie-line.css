@@ -1,0 +1,14 @@
+.movie-line-container {
+	width: 100%;
+	height: max-content;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.movie-line-wrapper {
+	width: max-content;
+	height: max-content;
+	display: flex;
+}
+
+.movie-line-container::-webkit-scrollbar {display: none;}

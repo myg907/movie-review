@@ -1,0 +1,17 @@
+/* This .css file is meant to be used for a specific tab. */
+
+#profile-tab {}
+
+/* I would use the root element (as shown above) as you would use an html element. */
+/* I would use the next element (as shown below) as you would use a body element. */
+
+#profile-tab > section.content {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Make all text within the profile-tab section white */
+#profile-tab > section.content h2,
+#profile-tab > section.content p {
+    color: white; /* Set text color to white */
+}

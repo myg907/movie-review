@@ -1,0 +1,452 @@
+[data-object="movie-card"] {
+	--aspect-cover-width: 16px;
+	--aspect-cover-height: 9px;
+	--aspect-multiplier: 5;
+	--normal-multiplier: 4; /* smaller */
+	--hovered-multiplier: 4.2; /* bigger */
+	--standard-gap-size: 4px;
+
+	--unit-content-container-width: calc(var(--aspect-cover-width) * var(--aspect-multiplier));
+	--unit-cover-height: calc(var(--aspect-cover-height) * var(--aspect-multiplier));
+
+	--unit-star-container-height: 8px;
+	--unit-star-font-size: 5px;
+	--inactive-star-color: rgb(64, 64, 64);
+	--active-star-color: var(--inactive-star-color);
+
+	--normal-star-font-size: calc(var(--unit-star-font-size) * var(--normal-multiplier));
+	--normal-active-star-text-shadow: 0 0 calc(2/5 * var(--normal-star-font-size)) var(--active-star-color);
+	--hovered-star-font-size: calc(var(--unit-star-font-size) * var(--hovered-multiplier));
+	--hovered-active-star-text-shadow: 0 0 calc(3/5 * var(--hovered-star-font-size)) var(--active-star-color);
+
+	--unit-title-line-height: 6px; --title-max-lines: 1;
+	--title-font-size-multiplier: 5/6;
+
+	--normal-title-line-height: calc(var(--unit-title-line-height) * var(--normal-multiplier));
+	--normal-title-max-height: calc(var(--normal-title-line-height) * var(--title-max-lines));
+	--normal-title-font-size: calc(var(--normal-title-line-height) * var(--title-font-size-multiplier));
+	--normal-title-text-shadow: 0 0 calc(1/5 * var(--normal-title-font-size)) var(--normal-details-wrapper-color);
+	--hovered-title-line-height: calc(var(--unit-title-line-height) * var(--hovered-multiplier));
+	--hovered-title-max-height: calc(var(--hovered-title-line-height) * var(--title-max-lines));
+	--hovered-title-font-size: calc(var(--hovered-title-line-height) * var(--title-font-size-multiplier));
+	--hovered-title-text-shadow: 0 0 calc(3/10 * var(--hovered-title-font-size)) var(--hovered-details-wrapper-color);
+
+	--unit-description-line-height: 4px; --description-max-lines: 4;
+	--description-font-size-multiplier: 3/4;
+
+	--normal-description-line-height: calc(var(--unit-description-line-height) * var(--normal-multiplier));
+	--normal-description-max-height: calc(var(--normal-description-line-height) * var(--description-max-lines));
+	--normal-description-font-size: calc(var(--normal-description-line-height) * var(--description-font-size-multiplier));
+	--normal-description-text-shadow: 0 0 calc(1/5 * var(--normal-description-font-size)) var(--normal-details-wrapper-color);
+	--hovered-description-line-height: calc(var(--unit-description-line-height) * var(--hovered-multiplier));
+	--hovered-description-max-height: calc(var(--hovered-description-line-height) * var(--description-max-lines));
+	--hovered-description-font-size: calc(var(--hovered-description-line-height) * var(--description-font-size-multiplier));
+	--hovered-description-text-shadow: 0 0 calc(3/10 * var(--hovered-description-font-size)) var(--hovered-details-wrapper-color);
+
+	--content-box-border-width: 3px;
+	--content-box-padding: var(--standard-gap-size);
+	--content-box-border-radius: calc((2 * var(--content-box-border-width)) + var(--content-box-padding));
+
+	--content-container-gap-size: var(--standard-gap-size);
+	--content-container-gap-count: 2; /* manually match */
+	--content-container-total-gap-space: calc(var(--content-container-gap-size) * var(--content-container-gap-count));
+
+	--normal-content-box-color: gray;
+	--hovered-content-box-color: white;
+
+	--cover-border-radius: var(--content-box-border-width);
+
+	--details-box-vertical-padding: 4px;
+	--details-box-horizontal-padding: 4px; /* for the stuff in it */
+	--details-box-total-vertical-padding: calc(2 * var(--details-box-vertical-padding));
+
+	--details-wrapper-gap-size: var(--standard-gap-size);
+	--details-wrapper-gap-count: 1; /* manually match */
+	--details-wrapper-total-gap-space: calc(var(--details-wrapper-gap-size) * var(--details-wrapper-gap-count));
+
+	--normal-details-wrapper-color: rgb(176, 176, 176);
+	--hovered-details-wrapper-color: rgb(216, 216, 216);
+
+	--transition-duration: 0.15s;
+	--transition-timing-function: ease-in-out;
+
+	--normal-content-container-width: calc(var(--unit-content-container-width) * var(--normal-multiplier));
+	--normal-star-container-height: calc(var(--unit-star-container-height) * var(--normal-multiplier));
+	--normal-cover-height: calc(var(--unit-cover-height) * var(--normal-multiplier));
+	--normal-details-box-height:
+		calc(
+			var(--details-box-total-vertical-padding) +
+			var(--normal-title-max-height) +
+			var(--normal-description-max-height) +
+			var(--details-wrapper-total-gap-space)
+		);
+	--normal-content-container-height:
+		calc(
+			var(--normal-star-container-height) +
+			var(--normal-cover-height) +
+			var(--normal-details-box-height) +
+			var(--content-container-total-gap-space)
+		);
+
+	--hovered-content-container-width: calc(var(--unit-content-container-width) * var(--hovered-multiplier));
+	--hovered-star-container-height: calc(var(--unit-star-container-height) * var(--hovered-multiplier));
+	--hovered-cover-height: calc(var(--unit-cover-height) * var(--hovered-multiplier));
+	--hovered-details-box-height:
+		calc(
+			var(--details-box-total-vertical-padding) +
+			var(--hovered-title-max-height) +
+			var(--hovered-description-max-height) +
+			var(--details-wrapper-total-gap-space)
+		);
+	--hovered-content-container-height:
+		calc(
+			var(--hovered-star-container-height) +
+			var(--hovered-cover-height) +
+			var(--hovered-details-box-height) +
+			var(--content-container-total-gap-space)
+		);
+
+	--normal-content-box-width: calc(var(--normal-content-container-width) + (2 * var(--content-box-padding)) + (2 * var(--content-box-border-width)));
+	--normal-content-box-height: calc(var(--normal-content-container-height) + (2 * var(--content-box-padding)) + (2 * var(--content-box-border-width)));
+
+	--hovered-content-box-width: calc(var(--hovered-content-container-width) + (2 * var(--content-box-padding)) + (2 * var(--content-box-border-width)));
+	--hovered-content-box-height: calc(var(--hovered-content-container-height) + (2 * var(--content-box-padding)) + (2 * var(--content-box-border-width)));
+
+	--whole-container-width: calc(var(--hovered-content-container-width) + (2 * var(--content-box-padding)) + (2 * var(--content-box-border-width)));
+	--whole-container-height: calc(var(--hovered-content-container-height) + (2 * var(--content-box-padding)) + (2 * var(--content-box-border-width)));
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container {
+	width: var(--whole-container-width);
+	height: var(--whole-container-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box {
+	width: var(--normal-content-box-width);
+	height: var(--normal-content-box-height);
+	padding: var(--content-box-padding);
+	border: var(--content-box-border-width) solid;
+	border-radius: var(--content-box-border-radius);
+	background: linear-gradient(rgb(24, 24, 24), rgb(16, 16, 16));
+	background-clip: padding-box;
+	color: var(--normal-content-box-color);
+	opacity: 0.9;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function),
+				color var(--transition-duration) var(--transition-timing-function),
+				opacity var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover {
+	width: var(--hovered-content-box-width);
+	height: var(--hovered-content-box-height);
+	color: var(--hovered-content-box-color);
+	opacity: 1;
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active {
+	width: var(--normal-content-box-width);
+	height: var(--normal-content-box-height);
+	gap: var(--normal-content-container-gap-height);
+	color: var(--normal-content-box-color);
+	opacity: 0.5;
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container {
+	width: var(--normal-content-container-width);
+	height: var(--normal-content-container-height);
+	display: flex;
+	flex-direction: column;
+	gap: var(--content-container-gap-size);
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container {
+	width: var(--hovered-content-container-width);
+	height: var(--hovered-content-container-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container {
+	width: var(--normal-content-container-width);
+	height: var(--normal-content-container-height);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.star-container {
+	width: var(--normal-content-container-width);
+	height: var(--normal-star-container-height);
+	display: flex;
+	justify-content: center;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.star-container {
+	width: var(--hovered-content-container-width);
+	height: var(--hovered-star-container-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.star-container {
+	width: var(--normal-content-container-width);
+	height: var(--normal-star-container-height);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.star-container > ul {
+	width: var(--normal-content-container-width);
+	height: var(--normal-star-container-height);
+	display: flex;
+	justify-content: center;
+	gap: var(--content-box-padding);
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.star-container > ul {
+	width: var(--hovered-content-container-width);
+	height: var(--hovered-star-container-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.star-container > ul {
+	width: var(--normal-content-container-width);
+	height: var(--normal-star-container-height);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.star-container > ul > li {
+	width: var(--normal-star-container-height);
+	height: var(--normal-star-container-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.star-container > ul > li {
+	width: var(--hovered-star-container-height);
+	height: var(--hovered-star-container-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.star-container > ul > li {
+	width: var(--normal-star-container-height);
+	height: var(--normal-star-container-height);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.star-container > ul > li > i {
+	color: var(--inactive-star-color);
+	font-size: var(--normal-star-font-size);
+	transition: font-size var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.star-container > ul > li > i {
+	font-size: var(--hovered-star-font-size);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.star-container > ul > li > i {
+	font-size: var(--normal-star-font-size);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.star-container > ul > li > i.active {
+	color: var(--active-star-color);
+	text-shadow: var(--normal-active-star-text-shadow);
+	transition: font-size var(--transition-duration) var(--transition-timing-function),
+				text-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.star-container > ul > li > i.active {
+	text-shadow: var(--hovered-active-star-text-shadow);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.star-container > ul > li > i.active {
+	text-shadow: var(--normal-active-star-text-shadow);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > img.movie-cover {
+	width: var(--normal-content-container-width);
+	height: var(--normal-cover-height);
+	border-radius: var(--cover-border-radius);
+	background-color: black;
+	object-fit: cover;
+	user-select: none;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > img.movie-cover {
+	width: var(--hovered-content-container-width);
+	height: var(--hovered-cover-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > img.movie-cover {
+	width: var(--normal-content-container-width);
+	height: var(--normal-cover-height);
+}
+
+/*
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > video {
+	width: var(--normal-content-container-width);
+	height: var(--normal-cover-height);
+	border-radius: var(--cover-border-radius);
+	object-fit: cover;
+	user-select: none;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > video {
+	width: var(--hovered-content-container-width);
+	height: var(--hovered-cover-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > video {
+	width: var(--normal-content-container-width);
+	height: var(--normal-cover-height);
+}
+*/
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.details-box {
+	width: var(--normal-content-container-width);
+	height: var(--normal-details-box-height);
+	padding: var(--details-box-vertical-padding) 0;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				height var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.details-box {
+	width: var(--hovered-content-container-width);
+	height: var(--hovered-details-box-height);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.details-box {
+	width: var(--normal-content-container-width);
+	height: var(--normal-details-box-height);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.details-box > div.details-wrapper {
+	width: var(--normal-content-container-width);
+	max-height: var(--normal-details-box-height);
+	display: flex;
+	flex-direction: column;
+	gap: var(--details-wrapper-gap-size);
+	color: var(--normal-details-wrapper-color);
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				max-height var(--transition-duration) var(--transition-timing-function),
+				color var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.details-box > div.details-wrapper {
+	width: var(--hovered-content-container-width);
+	max-height: var(--hovered-details-box-height);
+	color: var(--hovered-details-wrapper-color);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.details-box > div.details-wrapper {
+	width: var(--normal-content-container-width);
+	max-height: var(--normal-details-box-height);
+	color: var(--normal-details-wrapper-color);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.details-box > div.details-wrapper > p.movie-title {
+	width: var(--normal-content-container-width);
+	max-height: var(--normal-title-max-height);
+	padding: 0 var(--details-box-horizontal-padding);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--title-max-lines);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: var(--normal-title-line-height);
+	font-family: calibri, arial, sans-serif;
+	font-size: var(--normal-title-font-size);
+	text-shadow: var(--normal-title-text-shadow);
+	font-weight: bold;
+	user-select: none;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				max-height var(--transition-duration) var(--transition-timing-function),
+				line-height var(--transition-duration) var(--transition-timing-function),
+				font-size var(--transition-duration) var(--transition-timing-function),
+				text-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.details-box > div.details-wrapper > p.movie-title {
+	width: var(--hovered-content-container-width);
+	max-height: var(--hovered-title-max-height);
+	line-height: var(--hovered-title-line-height);
+	font-size: var(--hovered-title-font-size);
+	text-shadow: var(--hovered-title-text-shadow);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.details-box > div.details-wrapper > p.movie-title {
+	width: var(--normal-content-container-width);
+	max-height: var(--normal-title-max-height);
+	line-height: var(--normal-title-line-height);
+	font-size: var(--normal-title-font-size);
+	text-shadow: var(--normal-title-text-shadow);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-card"] > div.whole-container > div.content-box > div.content-container > div.details-box > div.details-wrapper > p.movie-description {
+	width: var(--normal-content-container-width);
+	max-height: var(--normal-description-max-height);
+	padding: 0 var(--details-box-horizontal-padding);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--description-max-lines);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: var(--normal-description-line-height);
+	font-family: calibri, arial, sans-serif;
+	font-size: var(--normal-description-font-size);
+	text-shadow: var(--normal-description-text-shadow);
+	font-weight: normal;
+	user-select: none;
+	transition: width var(--transition-duration) var(--transition-timing-function),
+				max-height var(--transition-duration) var(--transition-timing-function),
+				line-height var(--transition-duration) var(--transition-timing-function),
+				font-size var(--transition-duration) var(--transition-timing-function),
+				text-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+
+[data-object="movie-card"] > div.whole-container > div.content-box:hover > div.content-container > div.details-box > div.details-wrapper > p.movie-description {
+	width: var(--hovered-content-container-width);
+	max-height: var(--hovered-description-max-height);
+	line-height: var(--hovered-description-line-height);
+	font-size: var(--hovered-description-font-size);
+	text-shadow: var(--hovered-description-text-shadow);
+}
+
+[data-object="movie-card"] > div.whole-container > div.content-box:active > div.content-container > div.details-box > div.details-wrapper > p.movie-description {
+	width: var(--normal-content-container-width);
+	max-height: var(--normal-description-max-height);
+	line-height: var(--normal-description-line-height);
+	font-size: var(--normal-description-font-size);
+	text-shadow: var(--normal-description-text-shadow);
+}
+
+/* ================================================================================================================================================================================================== */

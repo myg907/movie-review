@@ -1,0 +1,81 @@
+[data-object="movie-cards-wrapper"] {
+	--movie-cards-wrapper-transition-duration: 0.15s;
+	--movie-cards-wrapper-transition-timing-function: ease-in-out;
+
+	--movie-cards-wrapper-content-wrapper-gap: 1rem;
+
+	--movie-cards-wrapper-label-line-height: 4rem;
+	--movie-cards-wrapper-label-font-size: calc(3/4 * var(--movie-cards-wrapper-label-line-height));
+
+	--movie-cards-wrapper-label-color-normal: rgb(176, 176, 176);
+	--movie-cards-wrapper-label-color-hovered: rgb(216, 216, 216);
+
+	--movie-cards-wrapper-label-text-shadow-normal: 0 0 calc(1/5 * var(--movie-cards-wrapper-label-font-size)) var(--movie-cards-wrapper-label-color-normal);
+	--movie-cards-wrapper-label-text-shadow-hovered: 0 0 calc(3/10 * var(--movie-cards-wrapper-label-font-size)) var(--movie-cards-wrapper-label-color-hovered);
+}
+
+[data-object="movie-cards-wrapper"] {
+	width: 100%;
+	height: max-content;
+	padding: 1.5rem 1rem 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-cards-wrapper"] > div.content-wrapper {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: var(--movie-cards-wrapper-content-wrapper-gap);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-cards-wrapper"] > div.content-wrapper > div.label-container {
+	width: 100%;
+	height: max-content;
+	padding: 0 1rem;
+	display: flex;
+}
+
+[data-object="movie-cards-wrapper"] > div.content-wrapper > div.label-container > span.label {
+	line-height: var(--movie-cards-wrapper-label-line-height);
+	font-family: calibri, arial, sans-serif;
+	font-size: var(--movie-cards-wrapper-label-font-size);
+	text-shadow: var(--movie-cards-wrapper-label-text-shadow-normal);
+	color: var(--movie-cards-wrapper-label-color-normal);
+	opacity: 0.9;
+	font-weight: bold;
+	user-select: none;
+	white-space: nowrap;
+	transition: color var(--movie-cards-wrapper-transition-duration) var(--movie-cards-wrapper-transition-timing-function),
+				text-shadow var(--movie-cards-wrapper-transition-duration) var(--movie-cards-wrapper-transition-timing-function),
+				opacity var(--movie-cards-wrapper-transition-duration) var(--movie-cards-wrapper-transition-timing-function);
+}
+
+[data-object="movie-cards-wrapper"] > div.content-wrapper > div.label-container > span.label:hover {
+	color: var(--movie-cards-wrapper-label-color-hovered);
+	text-shadow: var(--movie-cards-wrapper-label-text-shadow-hovered);
+	opacity: 1;
+}
+
+[data-object="movie-cards-wrapper"] > div.content-wrapper > div.label-container > span.label:active {
+	opacity: 0.5;
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-cards-wrapper"] > div.content-wrapper > div.movie-cards-wrapper {
+	width: 100%;
+	height: max-content;
+	padding: 0 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+/* ================================================================================================================================================================================================== */

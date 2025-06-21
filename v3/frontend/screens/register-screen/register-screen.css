@@ -1,0 +1,116 @@
+/* ================================================================================================================================================================================================== */
+
+#register-screen {}
+
+#register-screen > section.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ================================================================================================================================================================================================== */
+
+#register-box {
+	width: 400px;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	background-color: rgb(36, 36, 36);
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
+/* ================================================================================================================================================================================================== */
+
+#register-box > div.label-container {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	justify-content: center;
+}
+
+#register-box > div.label-container > span.label {
+	font-family: calibri, arial, sans-serif;
+	font-size: 3rem;
+	font-weight: bold;
+	color: white;
+	line-height: 100%;
+	text-align: center;
+	user-select: none;
+}
+
+/* ================================================================================================================================================================================================== */
+
+#register-form {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+#register-form > div {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#register-form > div > label {
+	width: max-content;
+	font-family: calibri, arial, sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	color: rgb(216, 216, 216);
+	line-height: 100%;
+	user-select: none;
+}
+
+#register-form > div > input {
+	background-color: black;
+	color: rgb(176, 176, 176);
+	border: 2px solid gray;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	font-family: calibri, arial, sans-serif;
+	font-size: 1.5rem;
+}
+
+#register-form > div > input:focus {
+	color: rgb(216, 216, 216);
+	border: 2px solid white;
+}
+
+/* ================================================================================================================================================================================================== */
+
+#register-form > div.register-buttons {
+	margin-top: 1rem;
+}
+
+#register-form > div.register-buttons > input {
+	font-weight: bold;
+	border: none;
+	color: white;
+	opacity: 0.8;
+}
+
+#register-form > div.register-buttons > input:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+#register-form > div.register-buttons > input:active {
+	cursor: default;
+	opacity: 0.5;
+}
+
+#register-form-register-button {
+	background-color: rgb(0, 176, 0) !important;
+}
+
+#register-form-login-button {
+	background-color: rgb(0, 176, 176) !important;
+}

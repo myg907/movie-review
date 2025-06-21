@@ -1,0 +1,75 @@
+/* This .css file is meant to be used for a specific tab, so be sure to start each css selector with the root element for the tab. */
+/* Update the data-tab values in this file using the current format to match the data-tab value in the html file when you change it. */
+
+#navigation-page {
+	--title-height: 0px;
+	--nav-height: 36px;
+	--header-height: calc(var(--title-height) + var(--nav-height));
+	--main-height: calc(100% - var(--header-height));
+}
+
+#navigation-page > section.content {}
+
+#navigation-page > section.content > header {
+	width: 100%;
+	height: var(--header-height);
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(0, 128, 128);
+}
+
+#navigation-page > section.content > header > h4 {
+	height: var(--title-height);
+	font-family: arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	padding: 10px;
+	overflow: hidden;
+}
+
+#navigation-page > section.content > header > nav {
+	width: 100%;
+	height: var(--nav-height);
+	padding: 0px 40px;
+	background-color: rgb(100, 100, 100);
+	display: flex;
+	gap: 40px;
+    overflow: hidden;
+}
+
+#navigation-page > section.content > header > nav > a {
+	font-family: arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+}
+
+#navigation-page > section.content > header > nav > a:hover {
+	color: rgb(0, 165, 165);
+}
+
+#navigation-page > section.content > header > nav > a:focus {
+	color: rgb(0, 128, 128);
+}
+
+#navigation-page > section.content > header > nav > a:active {
+	color: rgb(0, 100, 100);
+}
+
+#navigation-page-container {
+	width: 100%;
+	height: var(--main-height);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#navigation-page-container::-webkit-scrollbar {background: transparent;}
+#navigation-page-container::-webkit-scrollbar-track {background: linear-gradient(rgb(24, 24, 24), rgb(8, 8, 8));}
+#navigation-page-container::-webkit-scrollbar-thumb {background: linear-gradient(rgb(24, 24, 24), gray, rgb(8, 8, 8));}

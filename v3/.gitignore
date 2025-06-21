@@ -1,0 +1,14 @@
+# Node Modules
+node_modules/
+
+# Database Files
+*.db
+
+# Environment Files
+*.env
+
+# IDEA
+.idea/
+
+# XML
+*.xml

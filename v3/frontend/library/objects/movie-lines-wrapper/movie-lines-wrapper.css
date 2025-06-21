@@ -1,0 +1,8 @@
+[data-object="movie-lines-wrapper"] {
+	width: 100%;
+	height: max-content;
+	padding: 1.5rem 1rem 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}

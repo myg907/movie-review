@@ -1,0 +1,95 @@
+/* This .css file is meant to be used for a specific tab, so be sure to start each css selector with the root element for the tab. */
+/* Update the data-tab values in this file using the current format to match the data-tab value in the html file when you change it. */
+
+section[data-tab="movie-screen"] {}
+
+/* I would use the root element (as shown above) for making tab-specific variables. The standard.css file applies a width, height, and position to all section.tab elements. */
+/* I would use the first element (as shown below) and any subsequent elements for styling (width, height, position, margin, border, padding, etc...) */
+
+section[data-tab="movie-screen"] > section.content {
+    background-color: white;
+}
+.container.movie {
+    max-width: 900px;
+}
+
+/* Navigation icons */
+.home-icon, .profile-icon {
+    width: 20px;
+    margin: 0;
+    font-size: 27px;
+    color: gray;
+}
+
+/* Image styling */
+#movie-cover {
+    border-radius: 8px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Thumbs styling */
+.thumbs-container{
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    font-size: 27px;
+}
+.thumbs button {
+    font-size: 1.5rem;
+    border: none;
+}
+
+/* Box of stars styling */
+.star-box {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #fff;
+    padding: 25px 50px 35px;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+.star-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 33rem;
+    background: #fff;
+    margin: 0 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.stars i {
+    color: #e6e6e6;
+    font-size: 35px;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+.stars i.active {
+    color: #ff9c1a;
+}
+
+/* Can't load the page error message */
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1em;
+    border: 1px solid #f5c6cb;
+    margin: 1em 0;
+    text-align: center;
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}

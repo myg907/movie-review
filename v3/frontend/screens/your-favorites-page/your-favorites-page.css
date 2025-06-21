@@ -1,0 +1,16 @@
+#your-favorites-page-template-container {
+	width: 100%;
+	height: 100%;
+}
+
+[data-screen="your-favorites-page-logged-out"] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+[data-screen="your-favorites-page-logged-in"] { overflow-y: auto; }
+
+[data-screen="your-favorites-page-logged-in"]::-webkit-scrollbar {background: transparent;}
+[data-screen="your-favorites-page-logged-in"]::-webkit-scrollbar-track {background: linear-gradient(rgb(24, 24, 24), rgb(8, 8, 8));}
+[data-screen="your-favorites-page-logged-in"]::-webkit-scrollbar-thumb {background: linear-gradient(rgb(24, 24, 24), gray, rgb(8, 8, 8));}

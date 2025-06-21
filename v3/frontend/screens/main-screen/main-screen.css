@@ -1,0 +1,246 @@
+/* ================================================================================================================== */
+
+#main-screen {}
+
+#main-screen > section.content {}
+
+/* ================================================================================================================== */
+
+#movie-application {
+	--application-bar-height: 64px; /* match current-profile height */
+	--main-screen-height: calc(100% - var(--application-bar-height));
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/* ================================================================================================================== */
+
+#application-bar {
+	width: 100%;
+	height: var(--application-bar-height);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	background: linear-gradient(rgb(8, 8, 8), rgb(24, 24, 24));
+}
+
+#main-screen-content {
+	width: 100%;
+	height: var(--main-screen-height);
+}
+
+/* ================================================================================================================== */
+
+#application-bar > div.cell {
+	width: 100%;
+	height: 100%;
+}
+
+#application-bar > div.cell:nth-of-type(1) {
+	display: flex;
+	justify-content: flex-start;
+	position: relative; /* necessary for absolute dropdown menu */
+}
+
+#application-bar > div.cell:nth-of-type(2) {}
+
+#application-bar > div.cell:nth-of-type(2) > div.title-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 4px;
+}
+
+#application-bar > div.cell:nth-of-type(2) > div.title-container > span {
+	font-family: calibri, arial, sans-serif;
+	font-size: calc(1/2 * var(--application-bar-height));
+	text-shadow: 0 0 calc(6/25 * var(--application-bar-height)) white;
+	font-weight: bold;
+	color: white;
+	line-height: 100%;
+	white-space: nowrap;
+	user-select: none;
+}
+
+#application-bar > div.cell:nth-of-type(3) {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* ================================================================================================================== */
+
+#current-profile {
+	--profile-picture-container-border-width: var(--profile-picture-border-radius);
+	--profile-picture-container-padding: var(--profile-picture-container-border-width);
+	--profile-picture-container-border-radius: calc((2 * var(--profile-picture-container-border-width)) + var(--profile-picture-container-padding));
+	--profile-picture-container-size: calc(var(--profile-picture-size) + (2 * var(--profile-picture-container-padding)) + (2 * var(--profile-picture-container-border-width)));
+	--profile-objects-height: var(--profile-picture-container-size);
+
+	--profile-username-font-size: calc(3/4 * var(--profile-objects-height));
+	--profile-objects-gap: calc(1/4 * var(--profile-objects-height));
+	--current-profile-hover-box-padding: var(--profile-objects-gap);
+	--current-profile-hover-box-border-radius: var(--profile-objects-gap);
+	--current-profile-whole-box-padding: var(--profile-objects-gap);
+}
+
+#current-profile {
+	width: calc(2/3 * 100%);
+	min-width: 250px;
+	--profile-picture-size: 24px;
+	--profile-picture-border-radius: 2px;
+}
+
+/* ================================================================================================================== */
+
+#current-profile > div.display-box div.whole-box {
+	padding: var(--current-profile-whole-box-padding);
+}
+
+#current-profile > div.display-box div.hover-box-components {
+	position: relative;
+	border-radius: var(--current-profile-hover-box-border-radius);
+}
+
+#current-profile > div.display-box div.hover-box-background {
+	position: absolute;
+	width: 100%; height: 100%;
+	background: linear-gradient(rgb(24, 24, 24), rgb(72, 72, 72));
+	border-radius: var(--current-profile-hover-box-border-radius);
+
+	opacity: 0;
+	transition: opacity 0.15s ease-out;
+}
+
+#current-profile > div.display-box div.hover-box-content {
+	position: relative;
+	width: 100%; height: 100%;
+	padding: var(--current-profile-hover-box-padding);
+	border-radius: var(--current-profile-hover-box-border-radius);
+
+	color: rgb(176, 176, 176);
+	transition: color 0.15s ease-out;
+}
+
+#current-profile > div.display-box div.hover-box-components:hover div.hover-box-background {opacity: 1;}
+#current-profile > div.display-box div.hover-box-components:hover div.hover-box-content {color: white;}
+
+#current-profile > div.display-box div.hover-box-components:active div.hover-box-background {opacity: 0.5;}
+#current-profile > div.display-box div.hover-box-components:active div.hover-box-content {color: rgb(176, 176, 176);}
+
+#current-profile > div.display-box div.profile-objects {
+	height: var(--profile-objects-height);
+	display: flex;
+	gap: var(--profile-objects-gap);
+}
+
+#current-profile > div.display-box div.profile-picture-container {
+	width: var(--profile-picture-container-size);
+	height: var(--profile-picture-container-size);
+	padding: var(--profile-picture-container-padding);
+	border: var(--profile-picture-container-border-width) solid;
+	border-color: inherit;
+	border-radius: var(--profile-picture-container-border-radius);
+}
+
+#current-profile > div.display-box img.profile-picture {
+	width: var(--profile-picture-size);
+	height: var(--profile-picture-size);
+	border-radius: var(--profile-picture-border-radius);
+	user-select: none;
+}
+
+#current-profile > div.display-box div.profile-username-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+#current-profile > div.display-box span.profile-username {
+	color: inherit;
+	font-family: calibri, arial, sans-serif;
+	font-weight: bold;
+	font-size: var(--profile-username-font-size);
+	line-height: 100%;
+	white-space: nowrap;
+	user-select: none;
+}
+
+/* ================================================================================================================== */
+
+#current-profile > div.dropdown-menu {
+	position: absolute;
+	width: calc(2/3 * 100%);
+	min-width: 250px;
+	transition: all 0.15s ease-out;
+	opacity: 0;
+	z-index: -1;
+	pointer-events: none;
+	border-radius: var(--profile-objects-gap);
+}
+
+#current-profile > div.dropdown-menu.active {
+	opacity: 1;
+	z-index: 999;
+	pointer-events: auto;
+}
+
+#current-profile > div.dropdown-menu div.whole-box {
+	padding: var(--current-profile-whole-box-padding);
+	border-radius: var(--profile-objects-gap);
+	background-color: rgb(16, 16, 16);
+}
+
+#current-profile > div.dropdown-menu ul {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	border-radius: calc(var(--profile-objects-gap) - (1/3 * var(--current-profile-whole-box-padding)));
+	background-color: rgb(24, 24, 24);
+}
+
+#current-profile > div.dropdown-menu li {
+	width: 100%;
+	height: var(--profile-objects-height);
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	list-style-type: none;
+	padding: 0px var(--profile-objects-gap);
+	border-radius: calc(var(--profile-objects-gap) - (1/3 * var(--current-profile-whole-box-padding)));
+	color: rgb(176, 176, 176);
+}
+
+#current-profile > div.dropdown-menu li:hover {
+	background-color: rgb(48, 48, 48);
+	color: white;
+}
+
+#current-profile > div.dropdown-menu li:active {
+	background-color: rgb(36, 36, 36);
+	color: rgb(176, 176, 176);
+}
+
+#current-profile > div.dropdown-menu li:last-of-type:hover {
+	background-color: rgb(200, 25, 25);
+}
+
+#current-profile > div.dropdown-menu li:last-of-type:active {
+	background-color: rgb(150, 0, 0);
+	color: rgb(176, 176, 176);
+}
+
+#current-profile > div.dropdown-menu span {
+	color: inherit;
+	font-family: calibri, arial, sans-serif;
+	font-weight: bold;
+	font-size: calc(3/4 * var(--profile-username-font-size));
+	line-height: 100%;
+	white-space: nowrap;
+	user-select: none;
+}
+
+/* ================================================================================================================== */

@@ -1,0 +1,58 @@
+<section class="screen" id="movie-screen">
+    <section class="content" id="movie-screen-content"></section>
+</section>
+
+<template id="movie-found-template">
+    <section class="screen" id="movie-found-screen">
+
+        <header>
+            <div class="title-container">
+                <span id="title"></span>
+            </div>
+            <div class="buttons-container">
+                <div class="movie-button" id="watch-later-button"><span>Test Watch Later</span></div>
+                <div class="movie-button" id="favorite-movie-button"><span>Test Save Movie</span></div>
+            </div>
+        </header>
+        <main>
+            <!-- Movie Details Container -->
+            <div id="details-container">
+
+               <h3>Description</h3>
+               <p id="description"></p>
+
+               <h3>Release Date</h3>
+               <p id="release-date"></p>
+
+               <h3>Runtime</h3>
+               <p id="runtime"></p>
+
+               <h3>Maturity Rating</h3>
+               <p id="maturity-rating"></p>
+
+               <h3>Genres</h3>
+               <ul id="genres">
+               </ul>
+
+               <h3>Trailer</h3>
+               <i class="fa fa-play"></i><a id="trailer-link" href="" target="_blank"> Watch Trailer</a>
+            </div>
+            <!-- Reviews Container -->
+            <div id="reviews-section">
+                <header>
+                    <span>Reviews Section</span>
+                    <div id="create-review-button"><span>Leave a Review!</span></div>
+                </header>
+                <ul id="reviews-container">
+                    <!-- reviews api -->
+                </ul>
+            </div>
+        </main>
+    </section>
+</template>
+
+<template id="movie-not-found-template">
+    <section class="screen" id="movie-not-found-screen">
+        <span>Movie Not Found</span>
+    </section>
+</template>

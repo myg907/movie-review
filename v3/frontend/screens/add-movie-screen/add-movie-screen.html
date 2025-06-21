@@ -1,0 +1,44 @@
+<section class="screen" id="add-movie-screen"> <!--Change the ID-->
+	<div class="form-container">
+		<div class="label-container">
+			<span class="label">Add Movie</span>
+		</div>
+		<form id="add-movie-form" enctype="multipart/form-data">
+			<div>
+				<label for="title">Title</label>
+				<input name="title" type="text" id="title" required>
+			</div>
+			<div>
+				<label for="cover">Cover</label>
+				<input for="cover" type="file" id="cover" accept="image/*" required>
+			</div>
+			<div>
+				<label for="description">Description</label>
+				<textarea name="description" id="description" rows="5" cols="100" placeholder="Enter a description" required></textarea>
+			</div>
+			<div>
+				<label for="maturity-rating">Maturity Rating</label>
+				<input name="maturity-rating" type="text" id="maturity-rating" required>
+			</div>
+			<div>
+				<label for="release-date">Release Date</label>
+				<input name="release-date" type="date" id="release-date" required>
+			</div>
+			<div>
+				<label for="trailer-link">Trailer Link</label>
+				<input name="trailer-link" type="text" id="trailer-link" required>
+			</div>
+			<div>
+				<label for="runtime">Runtime</label>
+				<input name="runtime" type="text" id="runtime" required>
+			</div>
+			<div id="genres">
+				<label for="genres">Genres</label>
+			</div>
+			<div>
+				<input type="reset" value="Clear Form" class="form-button" id="clear-button">
+				<input type="submit" value="Add Movie" class="form-button" id="submit-button">
+			</div>
+		</form>
+	</div>
+</section>

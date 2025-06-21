@@ -1,0 +1,5 @@
+[data-screen="browse-movies-tab"] { overflow-y: auto; }
+
+[data-screen="browse-movies-tab"]::-webkit-scrollbar {background: transparent;}
+[data-screen="browse-movies-tab"]::-webkit-scrollbar-track {background: linear-gradient(rgb(24, 24, 24), rgb(8, 8, 8));}
+[data-screen="browse-movies-tab"]::-webkit-scrollbar-thumb {background: linear-gradient(rgb(24, 24, 24), gray, rgb(8, 8, 8));}

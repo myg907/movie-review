@@ -1,0 +1,69 @@
+/* This .css file is meant to be used for a specific tab, so be sure to start each css selector with the root element for the tab. */
+/* Update the data-tab values in this file using the current format to match the data-tab value in the html file when you change it. */
+
+#account-tab {}
+
+/* I would use the root element (as shown above) for making tab-specific variables. The standard.css file applies a width, height, and position to all section.tab elements. */
+/* I would use the first element (as shown below) and any subsequent elements for styling (width, height, position, margin, border, padding, etc...) */
+
+
+#account-tab > section.content {
+	font-family: Arial, sans-serif;
+	padding: 20px;
+}
+#account-tab h2 {
+	color: white;
+}
+
+#account-tab li {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+#account-tab span {
+	color: white;
+	font-size: 2rem;
+	line-height: 100%;
+}
+#account-tab .whole-box {
+	display: flex; /* Use flexbox for easy centering */
+	justify-content: center; /* Center items horizontally */
+	align-items: center; /* Center items vertically */
+}
+
+#account-tab .whole-box ul {
+	list-style-type: none; /* Remove default list styling */
+	padding: 0; /* Remove default padding */
+	margin: 0; /* Remove default margin */
+	display: flex; /* Use flexbox to align items in a row */
+	gap: 15px; /* Add space between the buttons */
+}
+
+#account-tab .whole-box .button {
+	display: inline-block;
+	background-color: #008080; /* Primary button color */
+	color: #fff; /* Text color */
+	padding: 10px 20px; /* Padding for a button-like appearance */
+	border-radius: 5px; /* Rounded corners */
+	text-align: center; /* Center the text */
+	cursor: pointer; /* Pointer cursor for interactivity */
+	text-decoration: none; /* Remove underline */
+	font-size: 16px; /* Font size for better readability */
+	transition: background-color 0.3s, transform 0.1s; /* Smooth hover effects */
+}
+
+/* Hover effect for better interactivity */
+#account-tab .whole-box .button:hover {
+	background-color: #008090; /* Darker shade on hover */
+	transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Active effect when the button is clicked */
+#account-tab .whole-box .button:active {
+	background-color: #008100; /* Even darker shade when active */
+	transform: translateY(0); /* Return to original position */
+}
+
+#account-tab img {
+	max-height: 400px;
+}

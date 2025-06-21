@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 10px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #008080;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #006666;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Create Account</h2>
+    <form id="createAccountForm" onsubmit="return handleFormSubmit(event)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="6">
+
+        <label for="genres">Favorite Movie Genres (Optional):</label>
+        <select id="genres" name="genres" multiple>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+            <option value="science-fiction">Science Fiction</option>
+            <option value="fantasy">Fantasy</option>
+        </select>
+
+        <button type="submit">Create Account</button>
+
+        <div class="error" id="error"></div>
+    </form>
+</div>
+
+<script>
+
+    async function handleFormSubmit(event) {
+        event.preventDefault();  // Prevent form from submitting normally
+
+        // Get the form values
+        const email = document.getElementById('email').value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        print()
+        // Check if all fields are valid
+        if (!email || !username || !password) {
+            document.getElementById('error').innerText = 'All fields are required!';
+            return false;
+        }
+
+        try {
+            // Hash the password using CryptoJS SHA-256
+            const hashedPassword = CryptoJS.SHA256(password).toString();
+
+            // Create an object to hold the form data
+            const formData = {
+                email: email,
+                username: username,
+                password: hashedPassword, // Send hashed password
+                genres: Array.from(document.getElementById('genres').selectedOptions).map(option => option.value)
+            };
+
+            // Send data to the server via fetch (POST request)
+            const response = await fetch('http://localhost:3000/addUser', { // Updated URL here
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            // Check if the response is successful
+            if (response.ok) {
+                const result = await response.json();
+                console.log("Server response:", result);
+
+                // Redirect to MoviePage.html
+                window.location.href = 'MoviePage.html';
+            } else {
+                // Handle errors (e.g., 4xx or 5xx responses)
+                const error = await response.json();
+                document.getElementById('error').innerText = error.message || 'An error occurred.';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('error').innerText = 'Failed to submit the form. Please try again.';
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Create Account</title>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js"></script>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            background-color: #f4f4f4;-->
+<!--            margin: 0;-->
+<!--            padding: 20px;-->
+<!--        }-->
+
+<!--        .container {-->
+<!--            max-width: 400px;-->
+<!--            margin: 10px auto;-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 20px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        h2 {-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 5px;-->
+<!--        }-->
+
+<!--        input, select {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 15px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            border-radius: 5px;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            background-color: #008080;-->
+<!--            color: #fff;-->
+<!--            border: none;-->
+<!--            border-radius: 5px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            background-color: #006666;-->
+<!--        }-->
+
+<!--        .error {-->
+<!--            color: red;-->
+<!--            font-size: 0.9em;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="container">-->
+<!--    <h2>Create Account</h2>-->
+<!--    <form id="createAccountForm" onsubmit="return handleFormSubmit(event)">-->
+<!--        <label for="email">Email:</label>-->
+<!--        <input type="email" id="email" name="email" required>-->
+
+<!--        <label for="username">Username:</label>-->
+<!--        <input type="text" id="username" name="username" required>-->
+
+<!--        <label for="password">Password:</label>-->
+<!--        <input type="password" id="password" name="password" required minlength="6">-->
+
+<!--        <label for="genres">Favorite Movie Genres (Optional):</label>-->
+<!--        <select id="genres" name="genres" multiple>-->
+<!--            <option value="action">Action</option>-->
+<!--            <option value="comedy">Comedy</option>-->
+<!--            <option value="drama">Drama</option>-->
+<!--            <option value="horror">Horror</option>-->
+<!--            <option value="science-fiction">Science Fiction</option>-->
+<!--            <option value="fantasy">Fantasy</option>-->
+<!--        </select>-->
+
+<!--        <button type="submit">Create Account</button>-->
+
+<!--        <div class="error" id="error"></div>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    async function handleFormSubmit(event) {-->
+<!--        event.preventDefault();  // Prevent form from submitting normally-->
+
+<!--        // Get the form values-->
+<!--        const email = document.getElementById('email').value;-->
+<!--        const username = document.getElementById('username').value;-->
+<!--        const password = document.getElementById('password').value;-->
+
+<!--        // Check if all fields are valid-->
+<!--        if (!email || !username || !password) {-->
+<!--            document.getElementById('error').innerText = 'All fields are required!';-->
+<!--            return false;-->
+<!--        }-->
+
+<!--        try {-->
+<!--            // Hash the password using CryptoJS SHA-256-->
+<!--            const hashedPassword = CryptoJS.SHA256(password).toString();-->
+
+<!--            // Create an object to hold the form data-->
+<!--            const formData = {-->
+<!--                email: email,-->
+<!--                username: username,-->
+<!--                password: hashedPassword,  // Send the hashed password-->
+<!--                genres: Array.from(document.getElementById('genres').selectedOptions).map(option => option.value)-->
+<!--            };-->
+
+<!--            // Send data to the server via fetch (POST request)-->
+<!--            const response = await fetch('http://localhost:3000/addUser', { // Updated URL here-->
+<!--                method: 'POST',-->
+<!--                headers: { 'Content-Type': 'application/json' },-->
+<!--                body: JSON.stringify(formData)-->
+<!--            });-->
+
+<!--            const result = await response.json();-->
+<!--            console.log("Server response:", result);-->
+<!--        } catch (error) {-->
+<!--            console.error('Error:', error);-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

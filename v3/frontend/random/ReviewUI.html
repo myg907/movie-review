@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Page</title>
+</head>
+<style>
+    p{display: block;
+        margin-right: 50em;}
+</style>
+<body onload = "InitialReview()">
+<form>
+    <!-- this will be removed once we get the account across pages-->
+    <label for="UserID">  User ID:  </label>
+    <input type="number" id="UserID" min="1" required><br><br>
+    <!--Review ID was made to auto increment (it starts at 1 and all inserts increase) it is kept for debug purposes
+
+    <label for="ReviewID">  Review ID:  </label>
+    <input type="number" id="ReviewID" min="1" required><br><br>
+    -->
+    <!-- this will be made automated later-->
+    <label for="DateMade">  Date Made:  </label>
+    <input type="date" id="DateMade" required><br><br>
+
+    <label for="ReviewRating">  Review Rating:  </label>
+    <input type="range" id="ReviewRating" min="0" max="10" value="10" required><br><br>
+
+    <label for="Content">  Review Content:  </label><br><br>
+    <textarea id="Content" rows="4" cols="50" required></textarea><br><br>
+    <!-- should defalut to NULL-->
+    <label for="Tags">  Tags:  </label>
+    <input type="text" id="Tags"><br><br>
+
+    <label for="Comments">  Comments:  </label>
+    <input type="text" id="Comments" required><br><br>
+
+    <label for="Likes">  Positive Likes:  </label>
+    <input type="number" id="Likes" value ='0' min="0" required><br><br>
+
+    <label for="Dislikes">  Negative Dislikes:  </label>
+    <input type="number" id="Dislikes"  value="0" min="0" required><br><br>
+
+    <label for="MovieID">  Movie ID:  </label>
+    <input type="text" id="MovieID" min="1" required><br><br>
+
+    <button onclick="getValue()">Post</button>
+    <script src="/Review.js"></script>
+
+    <!--This section shows the last review-->
+    <!--currently has the issue of not holding the information-->
+    <pre id="FullReview"></pre>
+</form>
+</body>
+</html>

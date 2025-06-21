@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Screen</title>
+    <link rel="stylesheet" href="jetbrains://web-storm/navigate/reference?project=csc450-fa24-team5&path=express/public/tabs/css/movie-screen.css">
+    <!-- Material Icons for thumbs up/down -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+</head>
+<body>
+<section class="tab" data-tab="movie-screen" data-label="Movie Screen">
+    <section class="content">
+        <header>
+            <h1>Jaws</h1>
+        </header>
+        <main>
+            <img src="Users/melis/sample_img.jpg" alt="My sample image" width="200">
+        </main>
+        <aside>
+            <article>
+                <h4>Genre</h4>
+                <p>Horror.</p>
+                <h4>Runtime</h4>
+                <p>2 hours.</p>
+                <h4>MPA Rating</h4>
+                <p>Mature</p>
+                <h4>Description</h4>
+                <p>Sharks eat people.</p>
+                <h4>Cast</h4>
+                <p>Richard Dreyfuss</p>
+                <h4>Do you recommend it?</h4>
+                <!-- Thumbs up and thumbs down -->
+                <div class="movie" data-movie-id="1">
+                    <div class="post-thumb-container">
+                        <div class="post-thumb post-thumb-button">
+                            <span class="material-symbols-outlined">thumb_up</span>
+                            <span class="post-thumb-counting">0</span>
+                        </div>
+                    </div>
+                    <div class="post-thumb-container">
+                        <div class="post-thumb post-thumb-button">
+                            <span class="material-symbols-outlined">thumb_down</span>
+                            <span class="post-thumb-counting">0</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </aside>
+    </section>
+    <script src="jetbrains://web-storm/navigate/reference?project=csc450-fa24-team5&path=express/public/components/js/classes/Movie.js" async></script>
+</section>
+</body>
+</html>
+

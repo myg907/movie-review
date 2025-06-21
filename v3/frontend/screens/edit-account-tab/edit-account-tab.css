@@ -1,0 +1,103 @@
+/* This .css file is meant to be used for a specific tab, so be sure to start each css selector with the root element for the tab. */
+/* Update the data-tab values in this file using the current format to match the data-tab value in the html file when you change it. */
+
+#edit-account-tab {}
+
+/* I would use the root element (as shown above) for making tab-specific variables. The standard.css file applies a width, height, and position to all section.tab elements. */
+/* I would use the first element (as shown below) and any subsequent elements for styling (width, height, position, margin, border, padding, etc...) */
+
+#edit-account-tab > section.content {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+#edit-account-tab .container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#edit-account-tab h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+#edit-account-tab label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+#edit-account-tab input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#edit-account-tab button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-account-tab button:hover {
+    background-color: #008080;
+}
+
+#edit-account-tab .error {
+    color: red;
+    font-size: 0.9em;
+}
+/* Style for the <li> element to look like a button */
+
+
+/* Hover effect for better interactivity */
+#edit-account-tab .whole-box {
+    display: flex; /* Use flexbox for easy centering */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+#edit-account-tab .whole-box ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox to align items in a row */
+    gap: 15px; /* Add space between the buttons */
+}
+
+#edit-account-tab .whole-box .button {
+    display: inline-block;
+    background-color: #008080; /* Primary button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for a button-like appearance */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size for better readability */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth hover effects */
+}
+
+/* Hover effect for better interactivity */
+#edit-account-tab .whole-box .button:hover {
+    background-color: #008090; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Active effect when the button is clicked */
+#edit-account-tab .whole-box .button:active {
+    background-color: #008100; /* Even darker shade when active */
+    transform: translateY(0); /* Return to original position */
+}

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<section class="tab" id="create-review-tab">
+	<section class="R_content">
+		<h1 id="review-title"></h1>
+		<form id="review-form">
+			<div class="ReviewQuestions">
+
+				<label for="ReviewRating">  Review Rating:  </label>
+				<input type="range" id="ReviewRating" min="0" max="10" value="10" oninput="rangeValue.innerText = this.value/2">
+				<p id="rangeValue">5</p> <span class="fa fa-star checked"></span> <br><br>
+
+				<label for="Content">  Review Content:  </label><br><br>
+				<textarea id="Content" rows="4" cols="50" required></textarea><br><br>
+
+
+				<input type="submit" value="Post Review">
+				<!-- this pre tag section will be removed once automated-->
+				<pre id="FullReview"></pre>
+			</div>
+		</form>
+	</section>
+</section>

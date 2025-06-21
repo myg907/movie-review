@@ -1,0 +1,82 @@
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-line"] {
+	--movie-line-transition-duration: 0.15s;
+	--movie-line-transition-timing-function: ease-in-out;
+
+	--movie-line-content-wrapper-gap: 1rem;
+
+	--movie-line-label-line-height: 4rem;
+	--movie-line-label-font-size: calc(3/4 * var(--movie-line-label-line-height));
+
+	--movie-line-label-color-normal: rgb(176, 176, 176);
+	--movie-line-label-color-hovered: rgb(216, 216, 216);
+
+	--movie-line-label-text-shadow-normal: 0 0 calc(1/5 * var(--movie-line-label-font-size)) var(--movie-line-label-color-normal);
+	--movie-line-label-text-shadow-hovered: 0 0 calc(3/10 * var(--movie-line-label-font-size)) var(--movie-line-label-color-hovered);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-line"] > div.content-wrapper {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: var(--movie-line-content-wrapper-gap);
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-line"] > div.content-wrapper > div.label-container {
+	width: 100%;
+	height: max-content;
+	padding: 0 1rem;
+	display: flex;
+}
+
+[data-object="movie-line"] > div.content-wrapper > div.label-container > span.label {
+	line-height: var(--movie-line-label-line-height);
+	font-family: calibri, arial, sans-serif;
+	font-size: var(--movie-line-label-font-size);
+	text-shadow: var(--movie-line-label-text-shadow-normal);
+	color: var(--movie-line-label-color-normal);
+	opacity: 0.9;
+	font-weight: bold;
+	user-select: none;
+	white-space: nowrap;
+	transition: color var(--movie-line-transition-duration) var(--movie-line-transition-timing-function),
+				text-shadow var(--movie-line-transition-duration) var(--movie-line-transition-timing-function),
+				opacity var(--movie-line-transition-duration) var(--movie-line-transition-timing-function);
+}
+
+[data-object="movie-line"] > div.content-wrapper > div.label-container > span.label:hover {
+	color: var(--movie-line-label-color-hovered);
+	text-shadow: var(--movie-line-label-text-shadow-hovered);
+	opacity: 1;
+}
+
+[data-object="movie-line"] > div.content-wrapper > div.label-container > span.label:active {
+	opacity: 0.5;
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-line"] > div.content-wrapper > div.movie-cards-container {
+	width: 100%;
+	height: max-content;
+	padding: 0 1rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+[data-object="movie-line"] > div.content-wrapper > div.movie-cards-container > div.movie-cards-wrapper {
+	width: max-content;
+	height: max-content;
+	display: flex;
+	gap: 0.5rem;
+}
+
+/* ================================================================================================================================================================================================== */
+
+[data-object="movie-line"] > div.content-wrapper > div.movie-cards-container::-webkit-scrollbar { display: none; }

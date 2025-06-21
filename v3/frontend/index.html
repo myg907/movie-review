@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Page Settings-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!--Page Details-->
+		<title>Movie Website</title>
+		<link rel="icon" href="./library/assets/favicon/star.svg">
+
+		<!--Fonts-->
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+		<!--Default CSS-->
+		<link rel="stylesheet" href="./library/default/reset.css">
+		<link rel="stylesheet" href="./library/default/elements.css">
+
+		<!--Objects-->
+		<link rel="stylesheet" href="./library/objects/movie-card/movie-card.css">
+		<link rel="stylesheet" href="./library/objects/movie-line/movie-line.css">
+		<link rel="stylesheet" href="./library/objects/movie-lines-wrapper/movie-lines-wrapper.css">
+		<link rel="stylesheet" href="./library/objects/movie-cards-wrapper/movie-cards-wrapper.css">
+
+		<!--Main CSS File-->
+		<link rel="stylesheet" href="./style.css">
+
+		<!--Main JavaScript File-->
+		<script type="module" src="./app.js"></script>
+
+		<!--Objects-->
+		<link rel="stylesheet" href="./library/stars/movie-card-stars.css">
+		<link rel="stylesheet" href="./library/stars/movie-line.css">
+
+		<!--Tabs (CSS)-->
+	</head>
+	<body>
+		<!--Main HTML Content-->
+		<section id="full-screen">
+			<section class="background"></section>
+			<section class="background"></section>
+			<section class="content" id="full-screen-content"></section>
+			<section class="overlay" id="full-screen-overlay"></section>
+		</section>
+
+		<!--Root Screen-->
+		<template id="root-screen-template">
+			<section class="screen" id="root-screen">
+				<header>
+					<div>
+						<span>This is the root page!</span>
+					</div>
+				</header>
+				<main>
+					<div id="root-screen-buttons-container"></div>
+				</main>
+			</section>
+		</template>
+
+		<!--Logged Out-->
+		<template id="root-screen-logged-out-template">
+			<section class="screen" data-screen="root-screen-logged-out">
+				<ul>
+					<li class="button" id="log-in"><span>Log In</span></li>
+					<li class="button" id="create-account"><span>Create Account</span></li>
+					<li class="button" id="continue-as-guest"><span>Continue as Guest</span></li>
+				</ul>
+			</section>
+		</template>
+
+		<!--Logged In-->
+		<template id="root-screen-logged-in-template">
+			<section class="screen" data-screen="root-screen-logged-in">
+				<ul>
+					<li class="button" id="continue-as-user"><span id="username"></span></li>
+					<li class="button" id="log-out"><span>Log Out</span></li>
+				</ul>
+			</section>
+		</template>
+	</body>
+</html>

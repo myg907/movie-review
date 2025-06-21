@@ -1,0 +1,30 @@
+:root {
+	--scale-font-size: 5/4;
+	--h6-size: calc(var(--scale-font-size) * 1rem);
+	--h5-size: calc(var(--scale-font-size) * var(--h6-size));
+	--h4-size: calc(var(--scale-font-size) * var(--h5-size));
+	--h3-size: calc(var(--scale-font-size) * var(--h4-size));
+	--h2-size: calc(var(--scale-font-size) * var(--h3-size));
+	--h1-size: calc(var(--scale-font-size) * var(--h2-size));
+}
+
+* {box-sizing: border-box;}
+
+html {font-size: 16px;}
+
+body {margin: 0; color: white;}
+
+h1 {font-size: var(--h1-size);}
+h2 {font-size: var(--h2-size);}
+h3 {font-size: var(--h3-size);}
+h4 {font-size: var(--h4-size);}
+h5 {font-size: var(--h5-size);}
+h6 {font-size: var(--h6-size);}
+
+h1, h2, h3, h4, h5, h6, p {margin: 0; line-height: 100%;}
+
+ol, ul {margin: 0; padding: 0; list-style-type: none;}
+
+li {line-height: 100%; display: flex;}
+
+a {text-decoration: none;}
